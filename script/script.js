@@ -1,18 +1,35 @@
-let num = 266219;
-let result = 1;
+'use strict'
 
-function arr(a) {
-    return num = Array.from(String(a), Number);
+const lang = prompt('', 'en/ru');
+
+const ru = ["Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота", "Воскресенье"];
+const en = ["Monday","Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+
+if (lang === 'ru'){
+    console.log(ru);
+} else {
+    console.log(en);
 }
-arr(num);
 
-for (let i = 0; i < num.length; i++){
-    result = result * num[i];
+switch (lang){
+    case 'ru':
+        console.log(ru);
+        break;
+    case 'en':
+        console.log(en);
+        break;
 }
 
-let power = result ** 3;
+const array = {
+    'ru': ["Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота", "Воскресенье"],
+    'en': ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+};
+console.log(array[lang]);
 
-console.log("Array: ", num);
-console.log("Result: ", result);
-console.log('result pow: ', power);
-console.log(String(power).slice(0, 2));
+// *2
+//условие ? выражение1 : выражение2
+
+const namePerson = '';
+console.log((namePerson === 'Артем') ? 'директор' :
+    (namePerson === 'Максим') ? 'преподаватель' :
+        'студент');
