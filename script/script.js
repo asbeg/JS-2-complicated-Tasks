@@ -7,7 +7,7 @@ const isString = function (string) {
 
     string = string.trim();
     if (string.length > 30) {
-    return string.slice(0, 30) + '...';
+        return string.slice(0, 30) + '...';
     }
 }
 
