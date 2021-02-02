@@ -1,35 +1,12 @@
 'use strict'
 
-const lang = prompt('', 'en/ru');
-
-const ru = ["Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота", "Воскресенье"];
-const en = ["Monday","Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
-
-if (lang === 'ru'){
-    console.log(ru);
-} else {
-    console.log(en);
+const isString = function (string) {
+    if (typeof string !== 'string'){
+        return ("B качестве аргумента передана не строка");
+    }else if (string.length > 30){
+        return string.slice(0, 30) + '...';
+    }
 }
 
-switch (lang){
-    case 'ru':
-        console.log(ru);
-        break;
-    case 'en':
-        console.log(en);
-        break;
-}
-
-const array = {
-    'ru': ["Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота", "Воскресенье"],
-    'en': ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
-};
-console.log(array[lang]);
-
-// *2
-//условие ? выражение1 : выражение2
-
-const namePerson = '';
-console.log((namePerson === 'Артем') ? 'директор' :
-    (namePerson === 'Максим') ? 'преподаватель' :
-        'студент');
+console.log("Test 1: ", isString("Если строка более 30 знаков - то после 30го символа часть текста скрывается и вместо них появляются три точки (...)"));
+console.log("Test 2: ", isString(50));
