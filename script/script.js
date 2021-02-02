@@ -1,11 +1,13 @@
 'use strict'
 
 const isString = function (string) {
-    if (typeof string !== 'string'){
+    if (typeof string !== 'string') {
         return ("B качестве аргумента передана не строка");
-    }else if (string.length > 30){
-        string = string.trim();
-        return string.slice(0, 30) + '...';
+    }
+
+    string = string.trim();
+    if (string.length > 30) {
+    return string.slice(0, 30) + '...';
     }
 }
 
