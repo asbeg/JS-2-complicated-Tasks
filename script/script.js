@@ -1,32 +1,45 @@
 'use strict';
-// 1
-const arr = ['556', '424', '242', '565', '789', '987', '255'];
 
-function searchNumber(item) {
-    //indexOf если знач не найдено возвр -1
-    if (item.indexOf('2') === 0 || item.indexOf('4') === 0) {
-        return item;
-    }
-}
 
-const startsWith = arr.filter(searchNumber);
+const isNumber = function (n) {
+        return !isNaN(parseFloat(n)) && isFinite(n);
+    },
 
-console.log(startsWith);
+    start = function () {
+        let count = 10;
+        let x = Math.floor(Math.random() * 101);
+        console.log(x);
+        return doCheck();
 
-// 2
+        function doCheck() {
+            let userPoint = prompt('Угадай число от 1 до 100...');
+            if (userPoint === null || count ===0) {
+                alert('Игра окончена!');
+            } else if (!isNumber(userPoint)) {
+                alert('Введи число');
+                doCheck();
+            } else if (Number(userPoint) < x) {
+                alert('Загаданное число меньше, осталось попыток ...' + count);
+                --count;
+                console.log(count);
+                doCheck();
+            } else if (Number(userPoint) > x) {
+                alert('Загаданное число больше, осталось попыток ...' + count);
+                --count;
+                console.log(count);
+                doCheck();
+            } else if (Number(userPoint) === x) {
+                alert('Поздравляю, Вы угадали!!!');
+                startAgain();
+            }
+        }
 
-for (let i = 1; i <= 100; i++) {
-    let a = 0;
-//влож цикл
-    for (let j = 2; j < i; j++) {
-        if (i % j === 0) {
-            //если число не простое
-            //остльные - простые(а===0)
-            a = 1;
-            break;
+        function startAgain(){
+            let question = confirm('Хотели бы сыграть еще?');
+            if (question){
+                start();
+            }else alert("Прощай!");
         }
     }
-    if (i > 1 && a === 0) {
-        console.log("Делители этого числа: 1 и ", i);
-    }
-}
+
+start();
