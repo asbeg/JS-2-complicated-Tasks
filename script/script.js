@@ -1,32 +1,18 @@
-'use strict';
-// 1
-const arr = ['556', '424', '242', '565', '789', '987', '255'];
 
-function searchNumber(item) {
-    //indexOf если знач не найдено возвр -1
-    if (item.indexOf('2') === 0 || item.indexOf('4') === 0) {
-        return item;
-    }
-}
+const week = ['Воскресенье', 'Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота'];
+let myDate = new Date();
+// Воскр =0 и субб.== 6
+let today = myDate.getDay();
+console.log(today);
 
-const startsWith = arr.filter(searchNumber);
+for (let i = 0; i < week.length; i++) {
+    if ((i === 6) && (i !== today)) {
+        document.write(`${week[i].italics()}<br/>`);
+    } else if ((i === 0) && (i !== today)) {
+        document.write(`${week[i].italics()}<br/>`);
+    }else if (i === today){
+        document.write(`${week[i].bold()}<br/>`);
+    }else
+    document.write(`${week[i]}<br/>`);
 
-console.log(startsWith);
-
-// 2
-
-for (let i = 1; i <= 100; i++) {
-    let a = 0;
-//влож цикл
-    for (let j = 2; j < i; j++) {
-        if (i % j === 0) {
-            //если число не простое
-            //остльные - простые(а===0)
-            a = 1;
-            break;
-        }
-    }
-    if (i > 1 && a === 0) {
-        console.log("Делители этого числа: 1 и ", i);
-    }
 }
