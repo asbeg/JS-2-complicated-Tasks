@@ -1,21 +1,16 @@
-const week = ['Воскресенье', 'Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота'];
-let myDate = new Date();
-// Воскр =0 и субб.== 6
-let today = myDate.getDay();
-console.log(today);
 
-for (let i = 0; i < week.length; i++) {
-    let days = week[i];
-    if (i===today){
-        days = days.bold();
-    }
-    if ((i === today && i === 0) || (i === today && i === 6)) {
-        days = days.bold().italics();
-    } else if (i === 0 || i === 6) {
-        days = days.italics();
-    }
+function generateOddNumber(x, y) {
+    let min = Math.min(x, y);
+    let max = Math.max(x, y);
+    let z = max - min;
 
-    const p = document.createElement('p');
-    p.innerHTML = days;
-    document.body.appendChild(p);
+    let number = Math.floor(Math.random() * z / 2) * 2 + 1;
+
+    console.log(number);
 }
+
+generateOddNumber(1, 100);
+generateOddNumber(0, -10);
+generateOddNumber(-7, -3);
+generateOddNumber(-100, 100);
+generateOddNumber(1, -1);
