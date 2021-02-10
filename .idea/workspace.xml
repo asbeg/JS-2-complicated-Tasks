@@ -28,8 +28,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="HTML File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -63,7 +63,11 @@
       <workItem from="1612441356424" duration="5790000" />
       <workItem from="1612463256909" duration="3756000" />
       <workItem from="1612638937277" duration="594000" />
-      <workItem from="1612704175226" duration="1473000" />
+      <workItem from="1612704175226" duration="1849000" />
+      <workItem from="1612792545481" duration="40000" />
+      <workItem from="1612815748393" duration="4000" />
+      <workItem from="1612892552272" duration="7290000" />
+      <workItem from="1612953605241" duration="6344000" />
     </task>
     <servers />
   </component>
@@ -87,9 +91,13 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="617" y="344" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1600.860/1600.0.1920.1040@0.0.1600.860" timestamp="1612625053439" />
-    <state x="463" y="180" width="672" height="678" key="search.everywhere.popup" timestamp="1612385263403">
+    <state x="456" y="195" key="run.anything.popup" timestamp="1612958112591">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="463" y="180" width="672" height="678" key="search.everywhere.popup/0.0.1600.860/1600.0.1920.1040@0.0.1600.860" timestamp="1612385263403" />
+    <state x="456" y="195" key="run.anything.popup/0.0.1600.860/1600.0.1920.1040@0.0.1600.860" timestamp="1612958112591" />
+    <state x="463" y="180" width="672" height="678" key="search.everywhere.popup" timestamp="1612907389446">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="463" y="180" width="672" height="678" key="search.everywhere.popup/0.0.1600.860/1600.0.1920.1040@0.0.1600.860" timestamp="1612907389446" />
   </component>
 </project>
