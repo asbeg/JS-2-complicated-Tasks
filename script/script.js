@@ -1,55 +1,44 @@
-const week = ['Воскресенье', 'Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота'];
-const month = ['января', 'февраля', 'марта', 'апреля', 'мае', 'июня', 'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря'];
+window.setInterval('refresh()', 1000);
 
 const date = new Date();
+//*** 9-a
+const myDate = date.toLocaleDateString(),
+    time = date.toLocaleTimeString('ru');
 
-const d = date.getDate();
-const m = date.getMonth() + 1;
-const y = date.getFullYear();
-
-const h = date.getHours();
-const m1 = date.getMinutes();
-const s = date.getSeconds();
-const dayIndex = date.getDay()
-
-const monthRu = month[m];
-const dayName = week[dayIndex];
-
-let dateString = `${functionB(d)}.${functionB(m)}.${y}-${functionB(h)}.${functionB(m1)}.${functionB(s)}`;
-
-const formattedString = `Сегодня ${dayName}, ${d} ${monthRu} ${y} года, ${h} ${functionA(h)} ${m1} минут ${s} секунд`;
-
+const dateString = `${functionB(myDate)}-${functionB(time)}`;
 const p = document.createElement('p');
 p.innerHTML = dateString;
 document.body.appendChild(p);
 
+//*** 9-b
+const today = date.toLocaleString('ru', {
+        weekday: 'long',
+        month: 'long',
+        day: 'numeric',
+    }),
+    hour = date.getHours(),
+    minute = date.getMinutes(),
+    sec = date.getSeconds(),
+    year = date.toLocaleString('ru', {year: 'numeric'}),
+    hourStr = declNum(hour, ['час', 'часа', 'часов']),
+    minStr = declNum(minute, ['минута', 'минуты', 'минут']),
+    secStr = declNum(sec, ['секунда', 'секунды', 'секунд']);
+
+const formattedString = `Сегодня ${today} ${year} года ${hour} ${hourStr} ${minute} ${minStr} ${sec} ${secStr}`;
 const p1 = document.createElement('p');
 p1.innerHTML = formattedString;
 document.body.appendChild(p1);
 
-// 1 a
-function functionA(n) {
-    let text_forms = ['час', 'часа', 'часов'];
-    n = Math.abs(n) % 100;
-    let n1 = n % 10;
-
-    if (n > 10 && n < 20) {
-        return text_forms[2];
-    } else if (n1 > 1 && n1 < 5) {
-        return text_forms[1];
-    } else if (n1 === 1) {
-        return text_forms[0];
-    } else {
-        return text_forms[2];
-    }
+function refresh() {
+    window.location.reload();
 }
 
-// 2 b
+function declNum(n, str) {
+    let cases = [2, 0, 1, 1, 1, 2];
+    return str[(n % 100 > 4 && n % 100 < 20) ? 2 : cases[(n % 10 < 5) ? n % 10 : 5]];
+}
+
 function functionB(n) {
-    if (n > 0 && n < 10) {
-        return '0' + n;
-    } else {
-        return n;
-    }
+    return (n > 0 && n < 10) ? '0' + n : n
 }
 
