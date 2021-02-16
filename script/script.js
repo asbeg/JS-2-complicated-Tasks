@@ -1,11 +1,14 @@
-const btn = document.getElementById('change'),
-color = document.getElementById('color');
+function angle(hour, minute) {
+    let check;
+    hour = hour % 12;
 
-function randomColor() {
-    let newColor = Math.floor(Math.random() * 16777216).toString(16);
-    document.body.style.backgroundColor = "#" + newColor;
-    color.innerHTML = "#" + newColor;
+    let hm = 0.5 * minute,
+        hh = 30 * hour,
+        ma = 6 * minute,
+        sum = Math.abs(hm + hh - ma);
+    return check ? 360 - sum : sum;
 }
 
-btn.addEventListener('click', randomColor);
-randomColor();
+console.log("12:01", angle(6, 0));
+console.log("12:00", angle(3, 0));
+console.log("16:42", angle(3, 30));
